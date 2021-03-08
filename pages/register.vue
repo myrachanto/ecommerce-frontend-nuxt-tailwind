@@ -7,6 +7,7 @@
 <script>
 // import { ValidationProvider } from 'vee-validate'
 import Register from '~/components/forms/register.vue'
+import { http } from '~/common/index.js'
 export default {
   components: {
     // ValidationProvider
@@ -14,11 +15,12 @@ export default {
   },
   data () {
     return {
+      http
     }
   },
   methods: {
     register (fd) {
-      this.$axios.post('/register', fd)
+      this.http.post('/register', fd)
         .then((res) => {
           console.log(res)
           this.$router.push('/login')

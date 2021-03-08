@@ -1,20 +1,17 @@
 <template>
      <div class="card">
-       <div class="imgpos relative">
-         <div class="absolute top-0 right-0 text-sm z-10 bg-yellow-100 px-2 rounded-xl text-gray-700 m-2">
-          <a href="#" class="flex justify-between items-center"><span>{{item.photos}}</span> <svg class="svg1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-</svg></a>
-        </div><nuxt-link :to="`/product/${item.code}`">
+       <div class="imgpos">
+         <nuxt-link :to="`/product/${item.code}`">
         <img :src="`${host}/${item.picture}`" class="cardimg" :alt="item.alt"/>
         </nuxt-link>
         </div>
         <div class="cardbody">
           <h4 class="h4header">{{item.title}}</h4>
-          <div class="cardbodyp flex justify-between items-center pt-4">
+          <div class="cardbodyp flex justify-between items-end pt-4">
+            <div class=" flex justify-end items-center">
            <div class="old">${{item.oldprice}}</div>
-           <div class="new">${{item.newprice}}</div>
+           <div class="new ml-2">${{item.newprice}}</div>
+            </div>
            <div class="itemslinks">
            <div><nuxt-link :to="`/product/${item.code}`" class="learn"> <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
   <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
@@ -47,7 +44,7 @@ export default {
   @apply bg-white rounded overflow-hidden w-60 md:w-80 shadow-lg;
 }
 .cardimg{
-  @apply h-32 sm:h-48 object-fill  transform transition duration-500 hover:scale-125;
+  @apply h-32 sm:h-48 object-fill ;
 }
 .imgpos{
   @apply flex justify-center items-center;
@@ -56,7 +53,7 @@ export default {
   @apply  text-xl md:text-2xl text-gray-900 flex flex-wrap items-center justify-start leading-tight;
 }
 .cardbody{
-  @apply m-4 text-xl text-gray-700 ;
+  @apply m-4 text-xl text-gray-700 justify-center  ;
 }
 .svg1{
   @apply h-4 w-4 hover:text-green-900;
@@ -77,7 +74,7 @@ export default {
   @apply flex justify-between items-center;
 }
 .old{
-  @apply text-red-700 line-through;
+  @apply text-red-700 line-through text-sm;
 }
 .new{
   @apply text-green-800;

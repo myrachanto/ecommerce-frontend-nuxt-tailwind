@@ -20,7 +20,7 @@ export default {
         background: linear-gradient(90deg, #55514d 0%, #8f827a 100%);
 }
 .wrapper{
-  @apply gradient w-full;
+  @apply gradient w-full font-serif;
 }
 /* .container {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;

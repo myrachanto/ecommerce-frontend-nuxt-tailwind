@@ -8,7 +8,7 @@
           <p class="cardbodyp" v-html="item.intro">
           </p>
         <nuxt-link :to="`/blogs/${item.code}`"><button class="btn3">
-            For more info
+            Read More ...
           </button></nuxt-link>
         </div>
         </div>
@@ -38,5 +38,8 @@ export default {
 }
 .cardbody{
   @apply m-4 text-xl text-gray-600 font-semibold;
+}
+.btn3{
+  @apply bg-white text-gray-800 mx-auto lg:mx-0 hover:underline text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-lg transform transition hover:scale-105 duration-300 ease-in-out;
 }
 </style>

@@ -2,36 +2,7 @@
   <div class="cont">
    <!--Hero-->
     <div class="app">
-      <div class="main">
-        <!--Left Col-->
-        <div class="message">
-          <p class="message2">Electronics wholesalers</p>
-          <!-- <h1 class="message2">
-            Well..., Welcome home!
-          </h1> -->
-          <p class="comment">
-        We design and develop websites or application to accomodate both personal or business related. Our goal is to ensure that you as a client get to reap all the benefits associated with the product in this case website or web application that you hired us to develop.<br />
-        Online Accounting applications, e-commerce websites, simple websites, are just but a few of what we do here at Chantosweb developers<br />
-          </p>
-          <ratings/>
-          <div class="flex flex-col justify-start items-start my-5">
-            <p>Phone: +254000000000</p>
-            <p>Email: Example@domain.com</p>
-            <p>Website: www.domain.com</p>
-          </div>
-          <div class="social my-7 mb-10">
-            <div>Follows us on</div>
-        <a href=""><img src="~/assets/imgs/social/fb.svg" alt="facebook" class="imgsoc"/></a>
-         <a href=""><img src="~/assets/imgs/social/l.svg" alt="Linkein" class="imgsoc"/></a>
-         <a href=""><img src="~/assets/imgs/social/i.svg" alt="instagram" class="imgsoc"/></a>
-         <a href=""><img src="~/assets/imgs/social/t.svg" alt="twitter" class="imgsoc"/></a>
-          </div>
-        </div>
-        <!--Right Col-->
-        <div class="drimg">
-        <img src="~/assets/imgs/products/hp.png" alt="web development" class="img"/>
-        </div>
-      </div>
+     <carouselo />
     </div>
     <div class="cv">
        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -45,8 +16,10 @@
       <div class="flexin" v-if="items">
       <div class="gridincard" >
        <cardi v-for="item in items" :key="item._id" :item="item"/>
-       <loadmore />
       </div>
+      </div>
+      <div class="flex justify-center items-center">
+      <nuxt-link to="/allproducts" class="btn2"> load more</nuxt-link>
       </div>
      </section>
 
@@ -56,19 +29,21 @@
       <div class="flexin" v-if="items">
       <div class="gridincard">
        <cardi v-for="item in items" :key="item._id" :item="item"/>
-       <loadmore />
       </div>
+      </div>
+      <div class="flex justify-center items-center">
+      <nuxt-link to="/allproducts" class="btn2"> load more</nuxt-link>
       </div>
      </section>
   </div>
 </template>
 <script>
 import cardi from '~/components/component/cardi.vue'
-import loadmore from '~/components/component/loadmore.vue'
-import Ratings from '~/components/component/ratings.vue'
+// import Ratings from '~/components/component/ratings.vue'
 import { http } from '~/common/index.js'
+import Carouselo from '~/components/component/carouselo.vue'
 export default {
-  components: { loadmore, Ratings, cardi },
+  components: { cardi, Carouselo },
   data () {
     return {
       // items: []
@@ -102,7 +77,9 @@ export default {
 .shaper{
  fill: white;
 }
-
+.gradient {
+        background: linear-gradient(90deg, #55514d 0%, #8f827a 100%);
+}
 .main{
   @apply container text-white mx-auto flex flex-wrap px-4 md:px-0 justify-between;
 }
@@ -120,6 +97,9 @@ export default {
 }
 .btn3{
   @apply bg-white text-gray-800 mx-auto lg:mx-0 hover:underline text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-lg transform transition hover:scale-105 duration-300 ease-in-out;
+}
+.btn2{
+  @apply gradient mx-auto lg:mx-0 hover:underline text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-lg transform transition hover:scale-105 duration-300 ease-in-out;
 }
 .img{
   @apply w-full md:w-4/5 z-50 rounded-3xl;
@@ -140,7 +120,7 @@ export default {
   @apply flex justify-center items-center;
 }
 .gridincard{
-  @apply grid  grid-cols-1 lg:grid-cols-4 gap-4  mt-14;
+  @apply grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  mt-14;
 }
 .social{
   @apply flex justify-center items-center;

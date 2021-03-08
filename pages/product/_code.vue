@@ -35,7 +35,6 @@
       <div class="flexin">
       <div class="gridincard">
        <cardi v-for="item in items" :key="item.id" :item="item"/>
-       <loadmore />
       </div>
       </div>
      </section>
@@ -44,7 +43,6 @@
       <div class="flexin">
       <div class="gridincard">
        <cardi v-for="item in items" :key="item.id" :item="item"/>
-       <loadmore />
       </div>
       </div>
      </section>
@@ -52,11 +50,10 @@
 </template>
 
 <script>
-import loadmore from '~/components/component/loadmore.vue'
 import Productratings from '~/components/component/productratings.vue'
 import { http, host } from '~/common/index.js'
 export default {
-  components: { loadmore, Productratings },
+  components: { Productratings },
   data () {
     return {
       host

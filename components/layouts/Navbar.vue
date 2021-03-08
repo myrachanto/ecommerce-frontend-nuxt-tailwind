@@ -3,38 +3,52 @@
   <header class="header">
     <div class="nav">
       <nuxt-link to="/" class="listy">
-    <div class="logo">
-        <img src="~/assets/imgs/logo.png" class="logo1"/>
-        <span><span class="chantos">Sh</span>Psy </span>
-      </div>
+        <div class="logo">
+            <img src="~/assets/imgs/logo.png" class="logo1"/>
+            <span><span class="chantos">Sh</span>Psy </span>
+          </div>
       </nuxt-link>
-      <div class="menu1" @click="isOpen = !isOpen">
-          <svg xmlns="http://www.w3.org/2000/svg" class="svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <div class="relative">
+    <nav :class="isOpen ? 'overnav' : 'hidden'" class="menu2">
+            <nuxt-link to="/allproducts" class="menulist2">Category</nuxt-link>
+            <nuxt-link to="/aboutus" class="menulist2">About</nuxt-link>
+            <nuxt-link to="/blog" class="menulist2">Blog</nuxt-link>
+            <nuxt-link to="/contact" class="menulist2">Contact</nuxt-link>
+            <div >
+      </div>
+          </nav>
       </div>
     </div>
-    <nav :class="isOpen ? 'block' : 'hidden'" class="menu2">
-      <div class="flex max menulist2">
-              <input type="email" placeholder="Search" class="border rounded w-full px-4 outline-none focus:shadow-inner"/>
-            </div>
-      <nuxt-link to="/" class="menulist2">Home</nuxt-link>
-      <nuxt-link to="/aboutus" class="menulist2">About</nuxt-link>
-      <nuxt-link to="/blog" class="menulist2">Blog</nuxt-link>
-      <nuxt-link to="/contact" class="menulist2">Contact</nuxt-link>
-      <button v-if="isLogin" @click="logout" class="menulist2">logout</button>
-      <div >
-
-  <div class="dropdown relative" v-if="!isLogin">
-    <button @click="dropmenu = !dropmenu" class="menulist2">
-      <span class="mr-1">Account</span>
-    </button>
-    <ul class="dropdown-menu absolute text-gray-700" :class="dropmenu ? 'block' : 'hidden'">
-      <li v-if="!isLogin" class=""> <nuxt-link to="/login" class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-10 block whitespace-no-wrap" >Signin</nuxt-link></li>
-      <li v-if="!isLogin" class=""><nuxt-link to="/register" class="bg-gray-200 hover:bg-gray-400 py-2 px-10 block whitespace-no-wrap">Singup</nuxt-link></li>
-    </ul>
-  </div>
-
-</div>
-    </nav>
+      <div class="lefty">
+        <div class="m-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="svg" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg></div>
+        <div class="relative">
+        <div class="absolute top-0 right-0 text-sm z-10 bg-red-500 px-1 rounded-xl text-white m-2">
+          <span>5</span>
+        </div>
+        <div class="m-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="svg"  viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg></div></div>
+        <div class="m-2">
+         <div class="dropdown relative ">
+          <button @click="dropmenu = !dropmenu" class="">
+            <span class=""><svg xmlns="http://www.w3.org/2000/svg" class="svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg></span>
+          </button>
+          <ul class="dropdown-menu absolute text-gray-700 m-2" :class="dropmenu ? 'block' : 'hidden'">
+            <li class=""> <nuxt-link to="/login" class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-10 block whitespace-no-wrap" >Signin</nuxt-link></li>
+            <li class=""><nuxt-link to="/register" class="bg-gray-200 hover:bg-gray-400 py-2 px-10 block whitespace-no-wrap">Singup</nuxt-link></li>
+          </ul>
+        </div></div>
+        <div class="m-2">
+      <div class="menu1" @click="isOpen = !isOpen">
+          <svg xmlns="http://www.w3.org/2000/svg" class="svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </div></div>
+      </div>
   </header>
       <hr class="hr" />
 </div>
@@ -67,14 +81,21 @@ export default {
 }
 </script>
 <style scoped>
-.block{
-  display: block;
-}
+
 .hidden{
   display: none;
 }
+.showing{
+  display: flex;
+}
 .gradient {
         background: linear-gradient(90deg, #55514d 0%, #8f827a 100%);
+}
+.block{
+  display: block;
+}
+.overnav{
+  @apply  gradient absolute block top-10 w-96 text-sm z-10 text-white;
 }
 .chantos{
   @apply text-gray-300;
@@ -83,10 +104,10 @@ export default {
   @apply fixed w-full gradient z-30 top-0 mb-10 text-white;
 }
 .header{
-  @apply bg-transparent container sm:flex sm:justify-between sm:items-center sm:py-3 mx-auto justify-around items-center border-current ;
+  @apply bg-transparent container flex sm:flex sm:justify-between sm:items-center sm:py-3 mx-auto justify-around items-center border-current ;
 }
 .nav{
-  @apply flex items-center justify-between py-3 sm:p-0;
+  @apply flex  py-3 sm:p-0;
 }
 .logo{
   @apply text-2xl lg:text-3xl text-white flex justify-start items-start mr-4;
@@ -95,13 +116,13 @@ export default {
   @apply h-10 w-10 mr-4;
 }
 .svg{
-  @apply h-8 w-8;
+  @apply h-8 w-8 ml-2;
 }
 .menu1{
-  @apply sm:hidden ;
+  @apply sm:hidden flex;
 }
 .menubtn{
-  @apply block text-gray-500 hover:text-white focus:text-white focus:outline-none;
+  @apply text-gray-500 hover:text-white focus:text-white focus:outline-none;
 }
 .menu2{
   @apply space-x-0 px-2 pt-2 pb-4 sm:flex sm:p-0;
@@ -112,7 +133,7 @@ export default {
 .menulist2{
   @apply mt-1 block listy px-2 py-1 text-2xl text-white font-semibold rounded hover:bg-white hover:text-black sm:mt-0 sm:ml-2;
    &.nuxt-link-exact-active{
-     @apply gradient text-white;
+     @apply  text-white;
    }
 }
 .btn1{
@@ -123,6 +144,12 @@ export default {
 }
 .dropdown:hover .dropdown-menu {
   display: block;
+}
+/* .leftmenu{
+  @apply sm:showing;
+} */
+.lefty{
+  @apply flex;
 }
 
 </style>
