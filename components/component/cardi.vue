@@ -13,6 +13,9 @@
            <div class="new ml-2">${{item.newprice}}</div>
             </div>
            <div class="itemslinks">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="svg"  viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
            <div><nuxt-link :to="`/product/${item.code}`" class="learn"> <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
   <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
   <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
@@ -74,7 +77,7 @@ export default {
   @apply flex justify-between items-center;
 }
 .old{
-  @apply text-red-700 line-through text-sm;
+  @apply text-red-700 line-through;
 }
 .new{
   @apply text-green-800;

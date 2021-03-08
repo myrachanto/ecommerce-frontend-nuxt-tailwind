@@ -10,10 +10,11 @@
       </nuxt-link>
       <div class="relative">
     <nav :class="isOpen ? 'overnav' : 'hidden'" class="menu2">
-            <nuxt-link to="/allproducts" class="menulist2">Category</nuxt-link>
-            <nuxt-link to="/aboutus" class="menulist2">About</nuxt-link>
-            <nuxt-link to="/blog" class="menulist2">Blog</nuxt-link>
-            <nuxt-link to="/contact" class="menulist2">Contact</nuxt-link>
+            <nuxt-link to="/allproducts" class="menulist2">Laptops</nuxt-link>
+            <nuxt-link to="/allproducts" class="menulist2">Computers</nuxt-link>
+            <nuxt-link to="/allproducts" class="menulist2">Phones</nuxt-link>
+            <nuxt-link to="/allproducts" class="menulist2">Tablets</nuxt-link>
+            <nuxt-link to="/allproducts" class="menulist2">Printers</nuxt-link>
             <div >
       </div>
           </nav>
@@ -89,7 +90,7 @@ export default {
   display: flex;
 }
 .gradient {
-        background: linear-gradient(90deg, #55514d 0%, #8f827a 100%);
+        background: linear-gradient(90deg, #ec5a20 0%, #d4b29b 100%);
 }
 .block{
   display: block;

@@ -49,5 +49,17 @@ export default {
   transition:{
     name: 'fade',
     mode: 'out-in'
-  }
+  },
+  // generate: {
+  //   routes() {
+  //     return axios.get('http://localhost:3400/productlimit').then(res => {
+  //       return res.data.questions.map(product => {
+  //         return {
+  //           route: '/questions/details/'+ question.url,
+  //           payload: question
+  //         }
+  //       })
+  //     })
+  //   }
+  // }
 }

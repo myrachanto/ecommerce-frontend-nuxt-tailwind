@@ -43,13 +43,13 @@ export default {
   @apply container text-white mx-auto flex flex-wrap px-4 md:px-0 justify-between;
 }
 .message1{
-  @apply flex flex-col font-bold text-white w-full md:w-2/5 justify-center items-center md:items-start text-center md:text-left;
+  @apply flex flex-col font-bold text-black w-full md:w-2/5 justify-center items-center md:items-start text-center md:text-left;
 }
 .mess{
-  @apply my-4 text-2xl md:text-7xl text-gray-300 font-bold leading-tight;
+  @apply my-4 text-2xl md:text-7xl text-black font-bold leading-tight;
 }
 .comment{
-  @apply leading-normal text-white text-xl md:text-2xl mb-8 mr-4;
+  @apply leading-normal text-black text-xl md:text-2xl mb-8 mr-4;
 }
 .btn3{
   @apply bg-white text-gray-800 mx-auto lg:mx-0 hover:underline text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-lg transform transition hover:scale-105 duration-300 ease-in-out;

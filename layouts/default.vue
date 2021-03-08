@@ -17,7 +17,7 @@ export default {
   padding: 0;
 }
 .gradient {
-        background: linear-gradient(90deg, #55514d 0%, #8f827a 100%);
+        background: linear-gradient(90deg, #ec5a20 0%, #d4b29b 100%);
 }
 .wrapper{
   @apply gradient w-full font-serif;
